@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+<div class="bg-primary text-white container">
+  <p>
+    <strong>User:</strong>
+    <%= @vote.user.name %>
+  </p>
+
+  <p>
+    <strong>Question:</strong>
+    <%= @vote.question.pregunta %>
+  </p>
+
+  <p>
+    <% if @vote.estado == true %>
+      <p> Si estoy de acuerdo </p>
+    <% else %>
+      <p> No estoy de acuerdo </p>
+    <% end %>
+  </p>
+
+  <%= link_to 'Edit', edit_vote_path(@vote) %> |
+  <%= link_to 'Back', votes_path %>
+</div>

@@ -14,9 +14,9 @@
     <% @districts.each do |district| %>
       <tr>
         <td><%= district.name %></td>
-        <td><%= link_to 'Show', district %></td>
-        <td><%= link_to 'Edit', edit_district_path(district) %></td>
-        <td><%= link_to 'Destroy', district, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', district_path(district), class: 'btn btn-warning text-white' %></td>
+        <td><%= link_to 'Edit', edit_district_path(district), class: 'btn btn-success text-white' %></td>
+        <td><%= link_to 'Destroy',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
