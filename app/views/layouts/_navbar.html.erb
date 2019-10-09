@@ -16,7 +16,7 @@
                   Panel de control
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="<%=  %>">Administrar</a>
+                  <a class="dropdown-item" href="<%= new_admin_user_session_path %>">Administrar</a>
 
                   <a class="dropdown-item" href="<%= districts_path  %>">Distritos</a>
                   <a class="dropdown-item" href="<%=projects_path  %>">Proyectos</a>
@@ -31,7 +31,7 @@
           <% if current_user.voter? %>
 
             <li class="nav-item active">
-              <a class="nav-link" href="<%= law_projects_path %>">Votar</a>
+              <a class="nav-link" href="<%=  %>">Votar</a>
             </li>
           <% end %>
 
