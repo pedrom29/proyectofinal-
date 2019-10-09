@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <h1>Distritos</h1>
 
-<h1>Distritos</h1>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th>Nombre</th>
-      <th>Id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @districts.each do |district| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= district.name %></td>
-        <td><%= district.id%></td>
-        <td><%= link_to 'Ver', district_path(district), class: 'btn btn-warning text-white' %></td>
-        <td><%= link_to 'Editar', edit_district_path(district), class: 'btn btn-success text-white' %></td>
-        <td><%= link_to 'Eliminar',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Nombre</th>
+        <th>Id</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @districts.each do |district| %>
+        <tr>
+          <td><%= district.name %></td>
+          <td><%= district.id%></td>
+          <td><%= link_to 'Ver', district_path(district), class: 'btn btn-primary text-white' %></td>
+          <td><%= link_to 'Editar', edit_district_path(district), class: 'btn btn-success text-white' %></td>
+          <td><%= link_to 'Eliminar',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'Agregar distrito', new_district_path %>
+  <br>
+
+  <%= link_to 'Agregar distrito', new_district_path %>
+</div>

@@ -1,31 +1,32 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Votar</h1>
+<div class="container-fluid">
+  <h1>Votar</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Question</th>
-      <th>Estado</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @votes.each do |vote| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= vote.user.name %></td>
-        <td><%= vote.question.pregunta %></td>
-        <td><%= vote.estado %></td>
-        <td><%= link_to 'Show', vote %></td>
-        <td><%= link_to 'Edit', edit_vote_path(vote) %></td>
-        <td><%= link_to 'Destroy', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>User</th>
+        <th>Question</th>
+        <th>Estado</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @votes.each do |vote| %>
+        <tr>
+          <td><%= vote.user.name %></td>
+          <td><%= vote.question.pregunta %></td>
+          <td><%= vote.estado %></td>
+          <td><%= link_to 'Ver', vote %></td>
+          <td><%= link_to 'Editar', edit_vote_path(vote) %></td>
+          <td><%= link_to 'Eliminar', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Vote', new_vote_path %>
+  <br>
+
+  <%= link_to 'Votar', new_vote_path %>
+</div>

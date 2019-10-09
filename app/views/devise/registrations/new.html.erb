@@ -1,6 +1,6 @@
 
 <div class="container text-center">
-  <h2 class=" py-2">Sign up</h2>
+  <h2 class=" py-2"><b>Registrarse</b></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'col-sm-12 form ') do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -16,7 +16,7 @@
     </div>
 
     <div class="field">
-      <%= f.label :district_id %> <br/>
+      <%= f.label :Comuna %> <br/>
       <%= f.select :district_id , District.pluck(:name, :id) %>
     </div>
 

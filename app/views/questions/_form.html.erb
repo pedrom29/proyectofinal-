@@ -21,10 +21,7 @@
     <%= form.select :project, Project.pluck(:name, :id) %>
   </div>
 
-  <div class="field">
-    <%= form.label :estado %>
-    <%= form.check_box :estado  %>
-  </div>
+
 
   <div class="actions">
     <%= form.submit %>
