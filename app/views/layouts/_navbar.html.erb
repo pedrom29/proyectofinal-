@@ -1,0 +1,52 @@
+
+    <nav class="navbar-fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
+    <a id="logo" class="navbar-brand" href="<%=  %>"><i class="fas fa-vote-yea"></i></a>
+     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <% if user_signed_in? %>
+        <ul class="navbar-nav">
+
+          <% if current_user.admin? %>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="<%=  %>" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                  Panel de control
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="<%=  %>">Administrar</a>
+
+                  <a class="dropdown-item" href="<%= districts_path  %>">Distritos</a>
+                  <a class="dropdown-item" href="<%=projects_path  %>">Proyectos</a>
+                  <a class="dropdown-item" href="<%= votes_path %>">Votos</a>
+                  <a class="dropdown-item" href="<%= questions_path %>">Crear votación</a>
+                </div>
+            </li>
+
+
+				  <% end %>
+
+          <% if current_user.voter? %>
+
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= law_projects_path %>">Votar</a>
+            </li>
+          <% end %>
+
+          <li class="nav-item">
+            <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+          </li>
+
+        <% else %>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= new_user_session_path %>">Iniciar sesión</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="<%= new_user_registration_path %>">Registrarse</a>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>

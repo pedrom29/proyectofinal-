@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Districts</h1>
+<h1>Distritos</h1>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nombre</th>
+      <th>Id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,9 +15,10 @@
     <% @districts.each do |district| %>
       <tr>
         <td><%= district.name %></td>
-        <td><%= link_to 'Show', district_path(district), class: 'btn btn-warning text-white' %></td>
-        <td><%= link_to 'Edit', edit_district_path(district), class: 'btn btn-success text-white' %></td>
-        <td><%= link_to 'Destroy',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= district.id%></td>
+        <td><%= link_to 'Ver', district_path(district), class: 'btn btn-warning text-white' %></td>
+        <td><%= link_to 'Editar', edit_district_path(district), class: 'btn btn-success text-white' %></td>
+        <td><%= link_to 'Eliminar',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New District', new_district_path %>
+<%= link_to 'Agregar distrito', new_district_path %>

@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   resources :votes
   resources :questions
   resources :projects
-  get 'users/sign_in'
-  root 'users#sign_in'
+
 
 
 

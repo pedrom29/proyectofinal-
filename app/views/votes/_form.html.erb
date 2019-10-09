@@ -15,12 +15,17 @@
 
 
   <div class="field">
-    <%= form.label :question_id %>
+    <%= form.label :Pregunta %>
     <%= form.select :question_id, Question.pluck(:pregunta, :id) %>
   </div>
 
   <div class="field">
-    <%= form.label :estado %>
+    <%= form.label :Si %>
+    <%= form.check_box :estado %>
+  </div>
+
+   <div class="field">
+    <%= form.label :No %>
     <%= form.check_box :estado %>
   </div>
 
