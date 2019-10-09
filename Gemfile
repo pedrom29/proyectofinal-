@@ -5,7 +5,7 @@ ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-gem 'devise'
+gem 'devise', ">= 4.7.1"
 gem 'cancancan'
 gem 'activeadmin'
 gem 'rails-i18n', '~> 5.1'
