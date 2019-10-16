@@ -13,11 +13,11 @@
   <p>
     <% if @vote.estado == true %>
       <p> Si estoy de acuerdo </p>
-    <% else %>
+    <% else @vote.estado == false  %>
       <p> No estoy de acuerdo </p>
     <% end %>
   </p>
 
-  <%= link_to 'Edit', edit_vote_path(@vote) %> |
-  <%= link_to 'Back', votes_path %>
+  
+  <%= link_to 'Volver', votes_path %>
 </div>

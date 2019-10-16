@@ -1,6 +1,6 @@
 
     <nav class="navbar fixed-top navbar navbar-expand-lg navbar-dark bg-dark">
-    <a id="logo" class="navbar-brand" href="<%=  %>"><i class="fas fa-vote-yea"></i></a>
+    <a id="logo" class="navbar-brand" href="<%= root_path  %>"><i class="fas fa-vote-yea"></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,29 +24,49 @@
                   <a class="dropdown-item" href="<%= questions_path %>">Crear votación</a>
                 </div>
             </li>
+            <li class="nav-item">
+              <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+            </li>
 
 
 				  <% end %>
 
+
           <% if current_user.voter? %>
 
             <li class="nav-item active">
-              <a class="nav-link" href="<%=  %>">Votar</a>
+              <a class="nav-link" href="<%= votes_path  %>">Votar</a>
+            </li>       
+
+         
+
+            <li class="nav-item">
+              <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link') %>
             </li>
           <% end %>
 
-          <li class="nav-item">
-            <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link') %>
-          </li>
+          <% if current_user.parliamentary? %>
 
-        <% else %>
-          <li class="nav-item active">
-            <a class="nav-link" href="<%= new_user_session_path %>">Iniciar sesión</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="<%= new_user_registration_path %>">Registrarse</a>
-          </li>
-        <% end %>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= votes_path  %>">Votar</a>
+            </li>
+         
+
+         
+
+            <li class="nav-item">
+              <%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete, class: 'nav-link') %>
+            </li>
+          <% end %>
+
+          <% else %>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= new_user_session_path %>">Iniciar sesión</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= new_user_registration_path %>">Registrarse</a>
+            </li>
+          <% end %>
       </ul>
     </div>
   </nav>

@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :votes
   resources :questions
   resources :projects
+  resources :districts
+  get 'users/index'
   root 'users#index'
-  
-
-
 
 
   devise_for :users, controllers: {
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
 
   }
-    resources :districts
+    
 
 
 

@@ -19,8 +19,12 @@
           <td><%= vote.question.pregunta %></td>
           <td><%= vote.estado %></td>
           <td><%= link_to 'Ver', vote %></td>
-          <td><%= link_to 'Editar', edit_vote_path(vote) %></td>
-          <td><%= link_to 'Eliminar', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% if can? :update, vote%>
+            <td><%= link_to 'Editar', edit_vote_path(vote) %></td>
+          <% end%>
+          <% if can? :destroy, vote%> 
+            <td><%= link_to 'Eliminar', vote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%end%>
         </tr>
       <% end %>
     </tbody>

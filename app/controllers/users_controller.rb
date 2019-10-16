@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+
+
   def index
     @users = User.all
   end
@@ -65,6 +67,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def set_default_role
+    self.role ||= Role.find_by_name('voter')
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

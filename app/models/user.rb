@@ -5,5 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   enum role: [:admin, :voter, :parliamentary]
 
+  after_initialize do
+    if self.new_record?
+      self.role ||= :voter
+    end
+  end
+
+
   
 end
