@@ -4,7 +4,7 @@ class VotesController < ApplicationController
   # GET /votes
   # GET /votes.json
   def index
-    @votes = Vote.all
+    @votes = Vote.all  
   end
 
   # GET /votes/1
@@ -28,7 +28,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
+        format.html { redirect_to @vote, notice: 'Gracias por votar.' }
         format.json { render :show, status: :created, location: @vote }
       else
         format.html { render :new }

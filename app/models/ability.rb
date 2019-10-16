@@ -8,12 +8,12 @@ class Ability
     #
        user ||= User.new # guest user (not logged in)
        if user.admin?
-         can :manage, :all       
+        can :manage, :all       
        end
 
        if user.voter?
-         can :read, Vote, user_id: user.id
-         can :create, Vote, user_id: user.id
+        can :read, Vote, user_id: user.id
+        can :create, Vote, user_id: user.id
        end 
 
        if user.parliamentary?
