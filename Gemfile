@@ -9,6 +9,8 @@ gem 'devise', ">= 4.7.1"
 gem 'cancancan'
 gem 'activeadmin'
 gem 'rails-i18n', '~> 5.1'
+#chartkick
+gem 'chartkick', '~> 3.2', '>= 3.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server

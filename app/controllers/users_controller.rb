@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
   
   def district
-    district = District.find(params[:district_id]) 
+    district = District.find(params[:district_id, :distrito]) 
   end
 
 
@@ -73,6 +73,6 @@ class UsersController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
-    params.require(:user).permit(:name, :email, :district_id, :role)
+    params.require(:user).permit(:name, :email, :district_id, :role, :distrito)
   end
 end
