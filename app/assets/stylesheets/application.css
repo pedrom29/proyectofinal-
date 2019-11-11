@@ -14,3 +14,15 @@
  *= require_self
  */
 
+ .navbar {
+    min-height: 38px;
+ 
+  }
+
+body {
+    background-color: #FEFEFE;
+    font-family: Verdana;
+    font-family: 'PT Sans';  
+    font-size: medium;
+}
+

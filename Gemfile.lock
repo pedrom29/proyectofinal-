@@ -278,7 +278,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (>= 2.15)
-  chartkick (~> 3.2, >= 3.2.1)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise (>= 4.7.1)

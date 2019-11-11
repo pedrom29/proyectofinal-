@@ -1,23 +1,77 @@
-<p id="notice"><%= notice %></p>
+<br>
+<br>
 <div class="container">
-  <p>
-    <strong>User:</strong>
-    <%= @vote.user.name %>
-  </p>
+  <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>Question:</strong>
+  <h2>
+    <strong>Encuesta:</strong>
     <%= @vote.question.pregunta %>
-  </p>
+  </h2>
 
-  <p>
+  <h3>
+    <strong>Respuesta:</strong>
     <% if @vote.estado == true %>
-      <p> Si estoy de acuerdo </p>
+      Si estoy de acuerdo 
     <% else @vote.estado == false  %>
-      <p> No estoy de acuerdo </p>
+      No estoy de acuerdo 
     <% end %>
-  </p>
+  </h3>
 
+  <h3>
+    <strong>Votante:</strong>
+    <%= @vote.user.name %>
+  </h3>
+
+  
+
+ 
+
+  
+
+  <h1 class="text-center">Votación</h1>
+
+  <h3 class="text-center">
+    <strong>Total votos:</strong>
+    <%= Vote.count %>
+  </h3>
+  <%= pie_chart Vote.group(:estado).count %>
+
+
+
+  <table class="table">
+    <h1>Parlamentarios que votaron lo mismo que tú</h1>
+    <thead>
+      <tr>
+        <th>Votante</th>        
+        <th>Elección</th>
+        <th>Perfil</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+     <% @votes.each do |vote| %>
+        <tr>
+          <td> 
+          <% if @vote.estado == true %>
+            <p><%= @vote.user.name %></p>
+          <% else @vote.estado == false  %>
+            <p><%= %></p> 
+          <% end %>
+          </td>      
+          <td>
+          <%= @vote.estado %>
+          </td>            
+          <td> 
+          <%= link_to 'Ver perfil', @vote.user.profile, target: "_blank" %>
+          </td>
+        </tr>
+        <%end %>            
+                  
+    </tbody>
+  </table> 
+  
   
   <%= link_to 'Volver', votes_path %>
 </div>

@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :descripción %>
+    <%= form.text_area :decription %>
+  </div>
+
+  <div class="field">
     <%= form.label :proyecto %>
     <%= form.select :project, Project.pluck(:name, :id) %>
   </div>

@@ -1,3 +1,4 @@
+
 <%= form_with(model: vote, local: true) do |form| %>
   <% if vote.errors.any? %>
     <div id="error_explanation">
@@ -19,8 +20,10 @@
     <%= form.select :question_id, Question.pluck(:pregunta, :id) %>
   </div>
 
+
   
-    <div class="field ">
+  
+    <div class="field">
       <%= form.label :Estoy_a_favor  %>
       <%= form.check_box :estado %>
     </div>

@@ -9,6 +9,7 @@ ActiveAdmin.register User do
       input :district_id      
       input :role
       input :distrito
+      input :profile
       
       
       
@@ -23,7 +24,7 @@ ActiveAdmin.register User do
     column :email   
     column :role
     column :district_id
-    column :created_at
+    column :profile
     column :distrito
     actions
    end
@@ -39,7 +40,7 @@ ActiveAdmin.register User do
   # permit_params :email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :name, :district_id, :role
   #
   # or
-  permit_params :email, :password, :role, :name, :district_id, :distrito
+  permit_params :email, :password, :role, :name, :district_id, :distrito, :profile
   #
   # permit_params do
   #   permitted = [:email, :encrypted_password, :reset_password_token, :reset_password_sent_at, :remember_created_at, :name, :district_id, :role]
