@@ -1,17 +1,15 @@
-<div class="container-fluid row">
-    <div class="col-sm-12">
-        <h1><b>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis voluptatem, sit atque, facere quae laborum repellat soluta ipsam culpa, ad nesciunt veritatis dicta. Magni officiis et alias, quae architecto ducimus.</b></h1>
-        
-        <div class="row">
-            <div class=col-sm-6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quidem voluptatibus culpa unde deleniti, tenetur porro nihil recusandae vero minima cum id quae debitis ducimus nam illo placeat, maiores ut! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, accusamus. Eum accusantium fuga velit possimus est asperiores incidunt voluptatum inventore consectetur amet quia dolorum esse, eaque dolorem obcaecati, ullam pariatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate facere aperiam magnam debitis animi nihil quidem, obcaecati ipsa sint praesentium reprehenderit saepe atque voluptatem ullam laborum quaerat voluptatibus eveniet officiis! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non quas libero quibusdam incidunt laudantium! Ipsa sapiente labore voluptate perferendis asperiores rem molestias, recusandae esse molestiae, magni deleniti reprehenderit, atque neque.</p>
-            </div>
+    <div class="container">
 
-            <div class="col-sm-6">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, quidem voluptatibus culpa unde deleniti, tenetur porro nihil recusandae vero minima cum id quae debitis ducimus nam illo placeat, maiores ut! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam, accusamus. Eum accusantium fuga velit possimus est asperiores incidunt voluptatum inventore consectetur amet quia dolorum esse, eaque dolorem obcaecati, ullam pariatur! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate facere aperiam magnam debitis animi nihil quidem, obcaecati ipsa sint praesentium reprehenderit saepe atque voluptatem ullam laborum quaerat voluptatibus eveniet officiis! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non quas libero quibusdam incidunt laudantium! Ipsa sapiente labore voluptate perferendis asperiores rem molestias, recusandae esse molestiae, magni deleniti reprehenderit, atque neque.</p>
-            </div>
-        </div>
+        <h1>Bienvenido a Chile es tuyo</h1>
+        <h2>Nuestro proposito</h2>
+        <p class=text-dark>blabla</p>
+        <% if user_signed_in? %>
+            <a type="button" class="btn text-white bg-primary link" href="<%= votes_path %>">Votar</a>
+        <% else %>
+            <a type="button" class="btn bg-dark text-white link" href="<%= new_user_session_path %>">Iniciar sesión</a>    
+            <a type="button" class="btn bg-dark text-white link" href="<%= new_user_registration_path %>">Registrarse</a>            
+        <% end %>
 
-        
+
+     
     </div>
-</div>
