@@ -1,15 +1,16 @@
-    <div class="container">
+    <div class="container text-center" id="redondear">
 
         <h1>Bienvenido a Chile es tuyo</h1>
         <h2>Nuestro proposito</h2>
-        <p class=text-dark>blabla</p>
+        <p>blabla</p>
         <% if user_signed_in? %>
-            <a type="button" class="btn text-white bg-primary link" href="<%= votes_path %>">Votar</a>
+            <a type="button" class="btn text-white bg-primary link" id="round" href="<%= votes_path %>">Votar</a>
         <% else %>
-            <a type="button" class="btn bg-dark text-white link" href="<%= new_user_session_path %>">Iniciar sesión</a>    
-            <a type="button" class="btn bg-dark text-white link" href="<%= new_user_registration_path %>">Registrarse</a>            
+            <a type="button" class="btn bg-success text-white link" id="round"  href="<%= new_user_session_path %>">Iniciar sesión</a>    
+            <a type="button" class="btn bg-primary text-white link" id="round"  href="<%= new_user_registration_path %>">Registrarse</a>            
         <% end %>
 
 
      
     </div>
+    

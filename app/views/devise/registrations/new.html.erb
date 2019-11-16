@@ -1,6 +1,6 @@
 
-<div class="container text-center">
-  <h2 class=" py-2"><b>Registrarse</b></h2>
+<div class="container text-center text-white" id="redondear"> 
+  <h2 class="text-white py-2"><b>Registrarse</b></h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'col-sm-12 form ') do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
@@ -39,5 +39,5 @@
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
+  
 </div>

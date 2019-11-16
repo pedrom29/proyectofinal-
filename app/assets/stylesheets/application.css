@@ -14,16 +14,66 @@
  *= require_self
  */
 
- .navbar {
-    min-height: 38px;
- 
-  }
-
-body {
-    background-color: #FEFEFE;
-    font-family: Verdana;
-    font-family: 'PT Sans';  
-    font-size: medium;
+.navbar {
   
+
+
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #313132;
+  color: white;
+}
+
+.navbar a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.navbar a.activo {
+  background-color: #4CAF50;
+  color: white;
+}
+
+body {  
+  color: #000f08;
+  margin: 0;  
+  font-family: 'Roboto', sans-serif; 
+  font-size: medium;
+  text-decoration: none;
+  background: rgb(255, 255, 255);
+  
+}
+
+#round {
+  border-radius: 5px;
+}
+
+#redondear {
+  color: black;  
+  background: white;
+  padding: 300px;
+  
+}
+
+#black {
+  background: white;
+}
+
+#dark {
+  background: black;
+}
+
+#navbarcolor {
+  background: black;
 }
 
