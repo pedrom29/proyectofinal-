@@ -18,9 +18,10 @@
   </h3>
 
   <h3>
-    <strong>Diputado:</strong>
+    <strong>Votante:</strong>
     <%= @vote.user.name %>
   </h3>
+  <hr>
 
   
 
@@ -36,13 +37,15 @@
   </h3>
   <%= pie_chart Vote.group(:estado).count %>
 
+  <hr>
+
 
 
   <table class="table table-bordered">
     <h1>Parlamentarios que votaron lo mismo que tú</h1>
     <thead class="thead-dark">
       <tr>
-        <th>Votante</th>        
+        <th>Diputado</th>        
         <th>Elección</th>
         <th>Perfil</th>
         

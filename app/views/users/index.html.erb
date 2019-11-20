@@ -1,15 +1,14 @@
-    <div class="container text-center" id="redondear">
+    <div class="container-fluid text-center" id="redondear">
 
-        <h1>Bienvenido a Chile es tuyo</h1>
+        <h1>Bienvenido </h1>
         <h2>Nuestro proposito</h2>
-        <p>blabla</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui iure recusandae ea. Velit modi repellendus deleniti incidunt nam optio nesciunt vero praesentium ad itaque a sit, repudiandae quidem dicta voluptatibus.</p>
         <% if user_signed_in? %>
             <a type="button" class="btn text-white bg-primary link" id="round" href="<%= votes_path %>">Votar</a>
         <% else %>
             <a type="button" class="btn bg-success text-white link" id="round"  href="<%= new_user_session_path %>">Iniciar sesión</a>    
             <a type="button" class="btn bg-primary text-white link" id="round"  href="<%= new_user_registration_path %>">Registrarse</a>            
         <% end %>
-
 
      
     </div>
