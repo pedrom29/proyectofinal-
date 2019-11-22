@@ -75,7 +75,7 @@ es:
         subject: Instrucciones para desbloquear
     omniauth_callbacks:
       failure: No has sido autorizado en la cuenta %{kind} porque "%{reason}".
-      success: Has sido autorizado satisfactoriamente en la cuenta %{kind}.
+      success: Has iniciado sesión correctamente con tu cuenta de %{kind}.
     passwords:
       edit:
         change_my_password: Cambiar mi contraseña
