@@ -3,7 +3,14 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
-  config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"]
+  config.omniauth :google_oauth2, ENV["GOOGLE_APP_ID"], ENV["GOOGLE_APP_SECRET"], {
+    name: 'my-project',
+    scope: 'email',
+    prompt: 'select_account',
+    image_aspect_ratio: 'original',
+    image_size: 100,
+    ssl_verify: false
+  }
 
   config.omniauth :facebook, ENV["FACEBOOK_APP_ID"],
   ENV["FACEBOOK_APP_SECRET"]

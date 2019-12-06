@@ -1,29 +1,43 @@
-<div class="container-fluid">
+<div class="container-fluid table-responsive" id="districts">
   <h1>Comunas</h1>
+
+<form action="<%= districts_path%>">
+  <h3>Buscador <input name="q"></h3>
+  </form>
+<hr>
 
   <table class="table table-bordered">
     <thead class=thead-dark>
+
       <tr>
-        <th>Nombre</th>        
+        <th>Nombre</th>
         <th>Distrito</th>
         <th colspan="3"></th>
       </tr>
     </thead>
 
     <tbody>
-      <% @districts.each do |district| %>
-        <tr>
-          <td><%= district.name %></td>         
-          <td><%= district.distrito%></td>
-          <td><%= link_to 'Ver', district_path(district), class: 'btn btn-primary text-white' %></td>
-          <td><%= link_to 'Editar', edit_district_path(district), class: 'btn btn-success text-white' %></td>
-          <td><%= link_to 'Eliminar',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
+
+      <%= render @districts %>
+
+
+    
     </tbody>
   </table>
 
   <br>
 
   <%= link_to 'Agregar distrito', new_district_path %>
+
+  <script>
+    $("[name=q]").keyup(function(event){
+      $.ajax({
+        url: '<%= districts_path%>',
+        type: 'GET',
+        dataType: 'script',
+        data: {q: $(this).val()}
+      })
+    });
+
+  </script>
 </div>

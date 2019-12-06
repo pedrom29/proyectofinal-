@@ -2,13 +2,13 @@
   <h1><b>Votaciones</b></h1>
 
   <div>
-    <a type="button" class="btn bg-primary text-white " id="round"  href="<%= new_vote_path %>">Votar</a> 
+    <a type="button" class="btn bg-primary text-white " id="round"  href="<%= new_vote_path %>">Votar</a>
   </div>
 
 
 
 
-<div class="container" id="black">
+<div class="container table-responsive" id="black">
   <h2><b>Tus votaciones previas:</b></h2>
 
   <table class="table table-bordered">
@@ -28,29 +28,29 @@
             <td><%= vote.user.name %></td>
             <td><%= vote.question.pregunta %></td>
             <td><%= vote.estado %></td>
-            <td><%= link_to 'Ver', vote %></td>              
-            <% if can? :update, vote%>  
-              <td>          
+            <td><%= link_to 'Ver', vote %></td>
+            <% if can? :update, vote%>
+              <td>
                 <%= link_to 'Editar', edit_vote_path(vote) %>
-              </td> 
-            <% end%>                   
-            
-            <% if can? :destroy, vote%> 
+              </td>
+            <% end%>
+
+            <% if can? :destroy, vote%>
               <td>
                 <%= link_to 'Eliminar', vote, method: :delete, data: { confirm: '¿Estás seguro?' } %>
               </td>
             <%end%>
-           
+
           </tr>
         <% end %>
       <% end %>
     </tbody>
-  </table> 
+  </table>
 
   <br>
 
 
-  
+
 
 
 </div>

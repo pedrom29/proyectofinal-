@@ -1,0 +1,8 @@
+<tr>
+
+  <td><%= district.name %></td>
+  <td><%= district.distrito%></td>
+  <td><%= link_to 'Ver', district_path(district), class: 'btn btn-primary text-white' %></td>
+  <td><%= link_to 'Editar', edit_district_path(district), class: 'btn btn-success text-white' %></td>
+  <td><%= link_to 'Eliminar',district, class: 'btn btn-danger text-white',  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

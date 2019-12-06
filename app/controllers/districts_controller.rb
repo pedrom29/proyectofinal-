@@ -4,7 +4,11 @@ class DistrictsController < ApplicationController
   # GET /districts
   # GET /districts.json
   def index
-    @districts = District.all
+    if params[:q].present?
+      @districts = District.where('name like ?', "%#{params[:q]}%")
+    else
+      @districts = District.all
+    end
   end
 
   # GET /districts/1

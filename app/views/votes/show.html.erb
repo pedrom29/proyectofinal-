@@ -1,7 +1,7 @@
 <br>
 <br>
 <div class="container">
-  <p id="notice"><%= notice %></p>
+
 
   <h2>
     <strong>Encuesta:</strong>
@@ -11,9 +11,9 @@
   <h3>
     <strong>Respuesta:</strong>
     <% if @vote.estado == true %>
-      Si estoy de acuerdo 
+      Si estoy de acuerdo
     <% else @vote.estado == false  %>
-      No estoy de acuerdo 
+      No estoy de acuerdo
     <% end %>
   </h3>
 
@@ -23,11 +23,11 @@
   </h3>
   <hr>
 
-  
 
- 
 
-  
+
+
+
 
   <h1 class="text-center">Votación</h1>
 
@@ -40,41 +40,227 @@
   <hr>
 
 
-
-  <table class="table table-bordered">
-    <h1>Parlamentarios que votaron lo mismo que tú</h1>
+  <% if @vote.estado == true %>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <h1>Parlamentarios que votaron lo mismo que tú</h1>
     <thead class="thead-dark">
       <tr>
-        <th>Diputado</th>        
-        <th>Elección</th>
-        <th>Perfil</th>
-        
+
+        <th scope="col">Diputado</th>
+        <th scope="col">Elección</th>
+
       </tr>
     </thead>
-
-
     <tbody>
-     <% @votes.each do |vote| %>
-        <tr>
-          <td> 
-          <% if @vote.estado == true %>
-            <p><%= @vote.user.name %></p>
-          <% else @vote.estado == false  %>
-            <p><%= %></p> 
-          <% end %>
-          </td>      
-          <td>
-          <%= @vote.estado %>
-          </td>            
-          <td> 
-          <%= link_to 'Ver perfil', @vote.user.profile, target: "_blank" %>
-          </td>
-        </tr>
-        <%end %>            
-                  
+      <tr>
+        <td>Sr. Florcita Alarcón</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. René Alinco</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Sebastián Álvarez</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Pedro Pablo Alvarez-Salamanca</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Gabriel Ascencio</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Pepe Auth Stewart</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Boris Barrera</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Bernardo Berger</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Alejandro Bernales</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Karim Bianchi</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Sergio Bobadilla</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Gabriel Boric</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Jorge Brito</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Miguel Ángel Calisto</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Loreto Carvajal Ambiado </td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Natalia Castillo </td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. José Miguel Castro</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Juan Luis Castro</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr.Ricardo Celis</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Sofía Cid</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Miguel Crispi</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Catalina Del Real</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Marcelo Díaz</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Francisco Eguiguren</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Iván Flores García</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Camila Flores</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sr. Fidel Espinoza</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Maya Fernández</td>
+        <td>A favor</td>
+      </tr>
+
+      <tr>
+        <td>Sra. Gonzalo Fuenzalida</td>
+        <td>A favor</td>
+      </tr>
+
     </tbody>
-  </table> 
-  
-  
+    </table>
+  </div>
+
+
+  <% else @vote.estado == false  %>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <h1>Parlamentarios que votaron lo mismo que tú</h1>
+      <thead class="thead-dark">
+        <tr>
+
+          <th scope="col">Diputado</th>
+          <th scope="col">Elección</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sr. Álvaro Carter</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sr. Juan Fuenzalida</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sr. Sergio Gahona</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sr. Jaime Mulet</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sr. Gustavo Sanhueza</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sra. Alejandra Sepúlveda</td>
+          <td>En contra</td>
+        </tr>
+
+        <tr>
+          <td>Sr. Esteban Velásquez</td>
+          <td>En contra</td>
+        </tr>
+
+      </tbody>
+      </table>
+    </div>
+
+
+  <% end %>
+
+
+
+
+
   <%= link_to 'Volver', votes_path %>
 </div>

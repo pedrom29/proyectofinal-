@@ -1,5 +1,5 @@
 
-<%= form_with(model: vote, local: true) do |form| %>
+<%= form_with(model: @vote, local: true) do |form| %>
   <% if vote.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(vote.errors.count, "error") %> prohibited this vote from being saved:</h2>
@@ -21,8 +21,8 @@
   </div>
 
 
-  
-  
+
+
     <div class="field">
       <%= form.label :Estoy_a_favor  %>
       <%= form.check_box :estado %>
@@ -32,7 +32,7 @@
       <%= form.label :Estoy_en_contra %>
       <%= form.check_box :false %>
     </div>
-    
+
 
 
   <div class="actions">

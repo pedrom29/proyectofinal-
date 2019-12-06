@@ -12,6 +12,8 @@ gem 'rails-i18n', '~> 5.1'
 # Omniauth authentication
 gem 'omniauth-google-oauth2'
 gem 'omniauth-facebook'
+#social share
+gem 'social-share-button'
 #chartkick
 gem 'chartkick'
 # Use postgresql as the database for Active Record
